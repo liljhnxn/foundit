@@ -2,7 +2,7 @@
 
 > **Tagline:** Lost something? Find it here.
 
-FoundIt is a modern, lightweight, decentralized lost-and-found board built on **Botchain Mainnet** (and Testnet). It enables users to connect their MetaMask wallet, publish lost or found items directly onto the blockchain, filter and explore active listings, and manage (resolve or delete) their own entries securely.
+FoundIt is a modern, lightweight, decentralized lost-and-found board built on **BOT Chain Mainnet**. It enables users to connect their MetaMask wallet, publish lost or found items directly onto the blockchain, filter and explore active listings, and manage (resolve or delete) their own entries securely.
 
 ---
 
@@ -49,7 +49,7 @@ FoundIt is deployed and verified on **Botchain Mainnet**:
 
 - [Node.js](https://nodejs.org/) (v18 or higher)
 - [MetaMask](https://metamask.io/) browser extension installed
-- A funded Botchain Testnet wallet (if deploying contracts or creating listings)
+- A funded BOT Chain wallet (if deploying contracts or creating listings)
 
 ### 2. Installation
 
@@ -71,7 +71,7 @@ Run the automated test suite:
 npx hardhat test
 ```
 
-### 4. Deploying to Botchain Testnet
+### 4. Deploying to BOT Chain Mainnet
 
 1. Copy `.env.example` to `.env.local`:
    ```bash
@@ -87,7 +87,7 @@ npx hardhat test
    ```
 4. Copy the deployed contract address and set it in `.env.local`:
    ```env
-   NEXT_PUBLIC_CONTRACT_ADDRESS="0x..."
+   NEXT_PUBLIC_CONTRACT_ADDRESS="0xBb7dc02D4F4f28471b2a0740B12fdABF05A991B1"
    ```
 
 ### 5. Running the Frontend

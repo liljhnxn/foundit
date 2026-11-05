@@ -4,7 +4,7 @@ import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "FoundIt - Lost something? Find it here.",
-  description: "A decentralized Web3 lost-and-found board on Botchain Testnet.",
+  description: "A decentralized Web3 lost-and-found board on BOT Chain Mainnet.",
   icons: {
     icon: "/favicon.svg",
   },

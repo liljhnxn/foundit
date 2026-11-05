@@ -53,7 +53,7 @@ function updateEnvFile(filePath, address, chainId, rpcUrl, explorerUrl) {
 
 async function main() {
   console.log("==========================================");
-  console.log("Starting deployment of FoundIt...");
+  console.log("Starting deployment of FoundIt on BOT Chain Mainnet...");
   console.log("==========================================");
 
   const signers = await hre.ethers.getSigners();
@@ -62,11 +62,10 @@ async function main() {
   }
   const deployer = signers[0];
   const network = await hre.ethers.provider.getNetwork();
-  const chainId = Number(network.chainId);
-  const isMainnet = chainId === 677;
-  const tokenSymbol = isMainnet ? "BOT" : "BOHR";
-  const explorerBase = isMainnet ? "https://scan.botchain.ai" : "https://scan.bohr.life";
-  const rpcUrl = isMainnet ? "https://rpc.botchain.ai" : "https://rpc.bohr.life";
+  const chainId = Number(network.chainId) || 677;
+  const tokenSymbol = "BOT";
+  const explorerBase = "https://scan.botchain.ai";
+  const rpcUrl = "https://rpc.botchain.ai";
 
   console.log(`Network: ${hre.network.name} (Chain ID: ${chainId})`);
   console.log(`Deploying from account: ${deployer.address}`);
@@ -85,10 +84,9 @@ async function main() {
   const estimatedGas = await hre.ethers.provider.estimateGas(deployTx);
   const estimatedCost = estimatedGas * gasPrice;
   console.log(`Estimated deployment gas: ${estimatedGas.toString()} units`);
-  console.log(`Estimated deployment fee: ${hre.ethers.formatEther(estimatedCost)} ${tokenSymbol} (~very minimal!)`);
+  console.log(`Estimated deployment fee: ${hre.ethers.formatEther(estimatedCost)} ${tokenSymbol} (gas optimized)`);
 
   console.log("\nBroadcasting deployment transaction with optimal gas settings...");
-  // Deploy without inflated gas tip
   const foundIt = await FoundIt.deploy({
     gasPrice: gasPrice,
   });
@@ -116,7 +114,7 @@ async function main() {
   const contractData = {
     address: contractAddress,
     chainId: chainId,
-    network: isMainnet ? "Botchain Mainnet" : "Botchain Testnet",
+    network: "BOT Chain Mainnet",
     deployedAt: new Date().toISOString(),
     abi: abi,
   };

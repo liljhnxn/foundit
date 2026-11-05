@@ -119,9 +119,9 @@ export default function Home() {
         {/* Hero Banner / Intro */}
         <section className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-charcoal-900 via-charcoal-850 to-charcoal-900 border border-charcoal-800 p-8 sm:p-10 shadow-card">
           <div className="relative z-10 max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-dim/40 border border-purple-500/20 text-purple-soft text-xs font-medium">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>Decentralized &amp; Tamper-Proof on Botchain</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-dim/40 border border-emerald-500/20 text-emerald-light text-xs font-medium">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Decentralized &amp; Tamper-Proof on BOT Chain Mainnet</span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
               Lost something? <br />
@@ -130,7 +130,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-sm sm:text-base text-charcoal-300 leading-relaxed max-w-xl">
-              FoundIt connects honest finders with worried owners. All listings are immutable records on the Botchain Testnet. Connect your wallet to publish or manage items.
+              FoundIt connects honest finders with worried owners. All listings are immutable records on BOT Chain Mainnet. Connect your wallet to publish or manage items.
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <button
@@ -150,6 +150,16 @@ export default function Home() {
                 />
                 <span>{isRefetching ? "Syncing..." : "Sync Blockchain"}</span>
               </button>
+              <a
+                href={`https://scan.botchain.ai/address/${CONTRACT_ADDRESS}`}
+                target="_blank"
+                rel="noreferrer"
+                className="px-4 py-2.5 rounded-xl bg-charcoal-850 hover:bg-charcoal-800 text-emerald-light border border-emerald-500/30 font-medium text-xs sm:text-sm transition-all duration-200 flex items-center gap-1.5"
+                title="View Smart Contract on BOT Chain Explorer"
+              >
+                <span>Verified Contract</span>
+                <span className="text-[10px] text-charcoal-400">↗</span>
+              </a>
             </div>
           </div>
           {/* Subtle background glow */}
@@ -224,28 +234,83 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="mt-auto border-t border-charcoal-800/80 bg-charcoal-950 py-8 text-center text-xs text-charcoal-500">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} FoundIt — Decentralized Lost &amp; Found on Botchain Mainnet (Chain ID 677).</p>
-          <div className="flex items-center gap-4 text-charcoal-400">
-            <a
-              href="https://scan.botchain.ai"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-purple-300 transition-colors"
-            >
-              Explorer (scan.botchain.ai)
-            </a>
-            <span>•</span>
-            <a
-              href="https://rpc.botchain.ai"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-purple-300 transition-colors"
-            >
-              RPC Endpoint
-            </a>
+      {/* Ecosystem Section & Footer */}
+      <footer className="mt-auto border-t border-charcoal-800/80 bg-charcoal-950/90 py-10 text-xs text-charcoal-400">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          {/* BOT Chain Ecosystem Banner */}
+          <div className="rounded-2xl bg-charcoal-900/80 border border-charcoal-800 p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-3.5">
+              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-emerald-500/20 via-emerald-600/30 to-purple-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-sm tracking-wider shadow-glow-emerald">
+                BOT
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h4 className="text-sm font-semibold text-white tracking-wide">
+                    Powered by BOT Chain
+                  </h4>
+                  <span className="px-2 py-0.5 text-[10px] font-medium tracking-wide uppercase rounded-full bg-emerald-dim/50 text-emerald-light border border-emerald-500/30">
+                    Mainnet (Chain ID 677)
+                  </span>
+                </div>
+                <p className="text-xs text-charcoal-400 mt-0.5">
+                  High-speed, low-fee decentralized infrastructure for autonomous Web3 applications.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="https://botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="px-4 py-2 rounded-xl bg-charcoal-850 hover:bg-charcoal-800 text-charcoal-200 hover:text-white border border-charcoal-700/70 hover:border-charcoal-600 font-medium transition-all flex items-center gap-1.5"
+              >
+                <span>BOT Chain Website</span>
+                <span className="text-[11px] text-charcoal-400">↗</span>
+              </a>
+              <a
+                href="https://scan.botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="px-4 py-2 rounded-xl bg-emerald-dim/40 hover:bg-emerald-dim/60 text-emerald-light border border-emerald-500/40 hover:border-emerald-500/60 font-medium transition-all flex items-center gap-1.5"
+              >
+                <span>BOT Chain Explorer</span>
+                <span className="text-[11px] text-emerald-400">↗</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Bottom Copyright & Links */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-charcoal-850 text-charcoal-500">
+            <p>© {new Date().getFullYear()} FoundIt — Built natively on BOT Chain (Chain ID: 677).</p>
+            <div className="flex items-center gap-4 text-charcoal-400">
+              <a
+                href={`https://scan.botchain.ai/address/${CONTRACT_ADDRESS}`}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-purple-300 transition-colors"
+              >
+                Verified Contract: {CONTRACT_ADDRESS.slice(0, 6)}...{CONTRACT_ADDRESS.slice(-4)}
+              </a>
+              <span>•</span>
+              <a
+                href="https://scan.botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-purple-300 transition-colors"
+              >
+                Explorer
+              </a>
+              <span>•</span>
+              <a
+                href="https://botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-purple-300 transition-colors"
+              >
+                botchain.ai
+              </a>
+            </div>
           </div>
         </div>
       </footer>

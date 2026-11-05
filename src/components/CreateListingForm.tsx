@@ -87,7 +87,7 @@ export function CreateListingForm({ onSuccess }: CreateListingFormProps) {
               Publish a Listing
             </h2>
             <p className="text-xs text-charcoal-400">
-              Create a record on the Botchain blockchain for a lost or found item.
+              Create a record on the BOT Chain blockchain for a lost or found item.
             </p>
           </div>
         </div>
@@ -205,7 +205,7 @@ export function CreateListingForm({ onSuccess }: CreateListingFormProps) {
           <div className="p-3 rounded-xl bg-emerald-950/40 border border-emerald-800/50 text-emerald-300 text-xs flex items-center justify-between">
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>Listing published successfully on Botchain!</span>
+              <span>Listing published successfully on BOT Chain!</span>
             </div>
             <button
               type="button"
@@ -228,7 +228,7 @@ export function CreateListingForm({ onSuccess }: CreateListingFormProps) {
               <>
                 <Loader2 className="w-4 h-4 animate-spin" />
                 <span>
-                  {isConfirming ? "Confirming on Botchain..." : "Awaiting signature..."}
+                  {isConfirming ? "Confirming on BOT Chain..." : "Awaiting signature..."}
                 </span>
               </>
             ) : !isConnected ? (

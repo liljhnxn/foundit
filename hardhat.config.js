@@ -54,15 +54,15 @@ module.exports = {
       accounts: accounts,
     },
     botchain: {
-      url: "https://rpc.bohr.life",
-      chainId: 968,
+      url: "https://rpc.botchain.ai",
+      chainId: 677,
       accounts: accounts,
     },
   },
   etherscan: {
     apiKey: {
       botchainMainnet: "empty",
-      botchain: "abc",
+      botchain: "empty",
     },
     customChains: [
       {
@@ -75,10 +75,10 @@ module.exports = {
       },
       {
         network: "botchain",
-        chainId: 968,
+        chainId: 677,
         urls: {
-          apiURL: "https://scan.bohr.life/api",
-          browserURL: "https://scan.bohr.life",
+          apiURL: "https://scan.botchain.ai/api",
+          browserURL: "https://scan.botchain.ai",
         },
       },
     ],

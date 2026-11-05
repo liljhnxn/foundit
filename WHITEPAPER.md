@@ -121,19 +121,19 @@ struct Listing {
 
 ### Slide 6: Technology & Infrastructure
 * **Smart Contract:** Solidity `^0.8.20` with custom errors for gas efficiency.
-* **Network:** Botchain Testnet (Chain ID: 968) with verified code on `scan.bohr.life`.
+* **Network:** BOT Chain Mainnet (Chain ID: 677) with verified code on `scan.botchain.ai`.
 * **Frontend:** Next.js 14 + TypeScript + Tailwind CSS + Wagmi/Viem.
 
-### Slide 7: Botchain Ecosystem Value
-* Real-world consumer utility showcasing fast transactions and low fees on Botchain.
+### Slide 7: BOT Chain Ecosystem Value
+* Real-world consumer utility showcasing fast transactions and low fees on BOT Chain.
 * Onboarding non-crypto users through an intuitive, practical daily application.
-* Public smart contract demonstrating Botchain's EVM compatibility and indexing.
+* Public smart contract demonstrating BOT Chain's EVM compatibility and indexing.
 
 ### Slide 8: Roadmap & Milestones
-* **Phase 1 (Completed):** Smart contract deployment & verification on Botchain Testnet, complete responsive dApp, automated test suites (13/13 passing).
+* **Phase 1 (Completed):** Smart contract deployment & verification on BOT Chain Mainnet, complete responsive dApp, automated test suites (13/13 passing).
 * **Phase 2:** Optional zero-knowledge anonymous claims and encrypted finder-to-owner messaging via Web3 protocols (e.g., XMTP / Waku).
-* **Phase 3:** Automated bounty rewards in native BOHR tokens for verified item returns.
-* **Phase 4:** Mainnet deployment and university / conference partnership pilot programs.
+* **Phase 3:** Automated bounty rewards in native BOT tokens for verified item returns.
+* **Phase 4:** Global expansion, campus pilots, and conference partnership programs.
 
 ### Slide 9: Co-Marketing & Ecosystem Ask
 * Feature in Botchain official social media announcements (X, Telegram, Discord).

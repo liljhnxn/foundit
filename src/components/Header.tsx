@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useAccount, useConnect, useDisconnect, useChainId, useSwitchChain } from "wagmi";
 import { botchainMainnet } from "@/config/chain";
 import { shortenAddress } from "@/utils/format";
-import { Wallet, LogOut, AlertTriangle, CheckCircle2, Copy, Sparkles } from "lucide-react";
+import { Wallet, LogOut, AlertTriangle, CheckCircle2, Copy, Sparkles, ExternalLink } from "lucide-react";
 
 export function Header() {
   const { address, isConnected } = useAccount();
@@ -44,9 +44,16 @@ export function Header() {
               <span className="text-xl font-bold tracking-tight text-white">
                 Found<span className="text-purple-light">It</span>
               </span>
-              <span className="px-2 py-0.5 text-[11px] font-medium tracking-wide uppercase rounded-full bg-emerald-dim/40 text-emerald-light border border-emerald-500/30">
-                Botchain Mainnet
-              </span>
+              <a
+                href="https://scan.botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="px-2 py-0.5 text-[11px] font-medium tracking-wide uppercase rounded-full bg-emerald-dim/40 text-emerald-light border border-emerald-500/30 hover:bg-emerald-dim/60 transition-colors flex items-center gap-1"
+                title="View BOT Chain Mainnet"
+              >
+                <span>BOT Chain</span>
+                <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+              </a>
             </div>
             <p className="text-xs text-charcoal-400 font-normal">
               Lost something? Find it here.
@@ -62,7 +69,7 @@ export function Header() {
               className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-amber-950/60 text-amber-300 border border-amber-700/60 hover:bg-amber-900/50 transition-colors"
             >
               <AlertTriangle className="w-3.5 h-3.5" />
-              <span>Switch to Botchain Mainnet</span>
+              <span>Switch to BOT Chain</span>
             </button>
           )}
 
