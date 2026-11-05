@@ -135,5 +135,5 @@ export const FOUND_IT_ABI = [
 
 export const CONTRACT_ADDRESS: `0x${string}` =
   (process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as `0x${string}`) ||
-  "0xC62A73e4BF4CcA16fF2352D1307554274Aa7DF9E";
+  "0xBb7dc02D4F4f28471b2a0740B12fdABF05A991B1";
 

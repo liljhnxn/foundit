@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useAccount, useConnect, useDisconnect, useChainId, useSwitchChain } from "wagmi";
-import { botchainTestnet } from "@/config/chain";
+import { botchainMainnet } from "@/config/chain";
 import { shortenAddress } from "@/utils/format";
 import { Wallet, LogOut, AlertTriangle, CheckCircle2, Copy, Sparkles } from "lucide-react";
 
@@ -14,7 +14,7 @@ export function Header() {
   const { switchChain } = useSwitchChain();
   const [copied, setCopied] = useState(false);
 
-  const isWrongNetwork = isConnected && chainId !== botchainTestnet.id;
+  const isWrongNetwork = isConnected && chainId !== botchainMainnet.id;
 
   const handleCopy = () => {
     if (address) {
@@ -44,8 +44,8 @@ export function Header() {
               <span className="text-xl font-bold tracking-tight text-white">
                 Found<span className="text-purple-light">It</span>
               </span>
-              <span className="px-2 py-0.5 text-[11px] font-medium tracking-wide uppercase rounded-full bg-charcoal-800 text-charcoal-300 border border-charcoal-700">
-                Botchain Testnet
+              <span className="px-2 py-0.5 text-[11px] font-medium tracking-wide uppercase rounded-full bg-emerald-dim/40 text-emerald-light border border-emerald-500/30">
+                Botchain Mainnet
               </span>
             </div>
             <p className="text-xs text-charcoal-400 font-normal">
@@ -58,11 +58,11 @@ export function Header() {
         <div className="flex items-center gap-3">
           {isConnected && isWrongNetwork && (
             <button
-              onClick={() => switchChain({ chainId: botchainTestnet.id })}
+              onClick={() => switchChain({ chainId: botchainMainnet.id })}
               className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-amber-950/60 text-amber-300 border border-amber-700/60 hover:bg-amber-900/50 transition-colors"
             >
               <AlertTriangle className="w-3.5 h-3.5" />
-              <span>Switch to Botchain</span>
+              <span>Switch to Botchain Mainnet</span>
             </button>
           )}
 
@@ -111,4 +111,3 @@ export function Header() {
     </header>
   );
 }
-

@@ -227,19 +227,19 @@ export default function Home() {
       {/* Footer */}
       <footer className="mt-auto border-t border-charcoal-800/80 bg-charcoal-950 py-8 text-center text-xs text-charcoal-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} FoundIt — Decentralized Lost &amp; Found on Botchain Testnet (Chain ID 968).</p>
+          <p>© {new Date().getFullYear()} FoundIt — Decentralized Lost &amp; Found on Botchain Mainnet (Chain ID 677).</p>
           <div className="flex items-center gap-4 text-charcoal-400">
             <a
-              href="https://scan.bohr.life"
+              href="https://scan.botchain.ai"
               target="_blank"
               rel="noreferrer"
               className="hover:text-purple-300 transition-colors"
             >
-              Explorer (scan.bohr.life)
+              Explorer (scan.botchain.ai)
             </a>
             <span>•</span>
             <a
-              href="https://rpc.bohr.life"
+              href="https://rpc.botchain.ai"
               target="_blank"
               rel="noreferrer"
               className="hover:text-purple-300 transition-colors"

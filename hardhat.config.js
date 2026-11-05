@@ -48,6 +48,11 @@ module.exports = {
     hardhat: {
       chainId: 31337,
     },
+    botchainMainnet: {
+      url: "https://rpc.botchain.ai",
+      chainId: 677,
+      accounts: accounts,
+    },
     botchain: {
       url: "https://rpc.bohr.life",
       chainId: 968,
@@ -56,9 +61,18 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
+      botchainMainnet: "empty",
       botchain: "abc",
     },
     customChains: [
+      {
+        network: "botchainMainnet",
+        chainId: 677,
+        urls: {
+          apiURL: "https://scan.botchain.ai/api",
+          browserURL: "https://scan.botchain.ai",
+        },
+      },
       {
         network: "botchain",
         chainId: 968,

@@ -2,7 +2,7 @@
 
 > **Tagline:** Lost something? Find it here.
 
-FoundIt is a modern, lightweight, decentralized lost-and-found board built on the **Botchain Testnet**. It enables users to connect their MetaMask wallet, publish lost or found items directly onto the blockchain, filter and explore active listings, and manage (resolve or delete) their own entries securely.
+FoundIt is a modern, lightweight, decentralized lost-and-found board built on **Botchain Mainnet** (and Testnet). It enables users to connect their MetaMask wallet, publish lost or found items directly onto the blockchain, filter and explore active listings, and manage (resolve or delete) their own entries securely.
 
 ---
 
@@ -21,15 +21,16 @@ FoundIt is a modern, lightweight, decentralized lost-and-found board built on th
 
 ## ⛓️ Blockchain Network Details
 
-FoundIt is pre-configured for the **Botchain Testnet**:
+FoundIt is deployed and verified on **Botchain Mainnet**:
 
 | Parameter | Value |
 |---|---|
-| **Network Name** | Botchain Testnet |
-| **Chain ID** | `968` |
-| **RPC URL** | `https://rpc.bohr.life` |
-| **Block Explorer** | `https://scan.bohr.life` |
-| **Currency Symbol** | `BOHR` |
+| **Network Name** | Botchain Mainnet |
+| **Chain ID** | `677` |
+| **RPC URL** | `https://rpc.botchain.ai` |
+| **Block Explorer** | `https://scan.botchain.ai` |
+| **Currency Symbol** | `BOT` (Total Supply: 150M) |
+| **Contract Address** | `0xBb7dc02D4F4f28471b2a0740B12fdABF05A991B1` |
 
 ---
 

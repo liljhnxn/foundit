@@ -1,8 +1,8 @@
 # FoundIt: Whitepaper & Pitch Deck Overview
 **Tagline:** *Lost something? Find it here.*  
-**Network:** Botchain Testnet (Chain ID: `968`)  
-**Contract Address:** `0xC62A73e4BF4CcA16fF2352D1307554274Aa7DF9E`  
-**Explorer:** [https://scan.bohr.life/address/0xC62A73e4BF4CcA16fF2352D1307554274Aa7DF9E](https://scan.bohr.life/address/0xC62A73e4BF4CcA16fF2352D1307554274Aa7DF9E)  
+**Network:** Botchain Mainnet (Chain ID: `677`)  
+**Contract Address:** `0xBb7dc02D4F4f28471b2a0740B12fdABF05A991B1`  
+**Explorer:** [https://scan.botchain.ai/address/0xBb7dc02D4F4f28471b2a0740B12fdABF05A991B1](https://scan.botchain.ai/address/0xBb7dc02D4F4f28471b2a0740B12fdABF05A991B1)  
 **Repository:** [https://github.com/liljhnxn/foundit](https://github.com/liljhnxn/foundit)  
 
 ---
@@ -12,7 +12,7 @@
 ## 1. Executive Summary
 Every year, millions of valuable personal items—wallets, electronics, keys, bags, and documents—are misplaced in public spaces. Traditional lost-and-found infrastructures are fragmented, centralized, and inefficient: physical boards are geographically bound, social media posts get buried by algorithms, and centralized apps create privacy hazards by collecting personal identifiers.
 
-**FoundIt** introduces a decentralized, tamper-proof, community-driven lost-and-found registry deployed on the **Botchain Testnet**. By utilizing public EVM smart contracts, FoundIt enables peer-to-peer accountability, transparent lifecycle tracking, and permissionless listing management without reliance on intermediaries or centralized databases.
+**FoundIt** introduces a decentralized, tamper-proof, community-driven lost-and-found registry deployed on the **Botchain Mainnet**. By utilizing public EVM smart contracts, FoundIt enables peer-to-peer accountability, transparent lifecycle tracking, and permissionless listing management without reliance on intermediaries or centralized databases.
 
 ---
 
@@ -37,11 +37,11 @@ FoundIt bridges the gap between honest finders and worried owners through decent
 ## 4. Technical Architecture
 
 ### 4.1. Network Specifications
-* **Network:** Botchain Testnet
-* **Chain ID:** `968`
-* **RPC Endpoint:** `https://rpc.bohr.life`
-* **Block Explorer:** `https://scan.bohr.life`
-* **Native Currency:** `BOHR`
+* **Network:** Botchain Mainnet
+* **Chain ID:** `677`
+* **RPC Endpoint:** `https://rpc.botchain.ai`
+* **Block Explorer:** `https://scan.botchain.ai`
+* **Native Currency:** `BOT` (Total Supply: 150M)
 
 ### 4.2. Smart Contract Architecture (`FoundIt.sol`)
 The contract maintains an indexed storage mapping and state counter:
@@ -144,4 +144,4 @@ struct Listing {
 ### Slide 10: Conclusion & Contact
 * **Try the DApp:** [http://localhost:3000](http://localhost:3000)
 * **GitHub Repository:** [https://github.com/liljhnxn/foundit](https://github.com/liljhnxn/foundit)
-* **Verified Contract:** `0xC62A73e4BF4CcA16fF2352D1307554274Aa7DF9E`
+* **Verified Contract:** `0xBb7dc02D4F4f28471b2a0740B12fdABF05A991B1` (Chain ID: 677)

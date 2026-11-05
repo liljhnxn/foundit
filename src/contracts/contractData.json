@@ -1,8 +1,8 @@
 {
-  "address": "0xC62A73e4BF4CcA16fF2352D1307554274Aa7DF9E",
-  "chainId": 968,
-  "network": "botchain",
-  "deployedAt": "2026-10-30T13:54:56.110Z",
+  "address": "0xBb7dc02D4F4f28471b2a0740B12fdABF05A991B1",
+  "chainId": 677,
+  "network": "Botchain Mainnet",
+  "deployedAt": "2026-11-05T21:08:18.327Z",
   "abi": [
     {
       "inputs": [
