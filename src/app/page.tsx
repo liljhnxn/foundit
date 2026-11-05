@@ -9,13 +9,20 @@ import { Filters } from "@/components/Filters";
 import { ListingBoard } from "@/components/ListingBoard";
 import { FOUND_IT_ABI, CONTRACT_ADDRESS } from "@/contracts/foundItAbi";
 import { Listing, FilterStatus, ListingType } from "@/types";
-import { RefreshCw, ShieldCheck, ArrowRight, Compass } from "lucide-react";
+import { RefreshCw, ShieldCheck, ArrowRight, Compass, Copy, CheckCircle2, ExternalLink } from "lucide-react";
 
 export default function Home() {
   const { address, isConnected } = useAccount();
   const [currentFilter, setCurrentFilter] = useState<FilterStatus>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [showCreateForm, setShowCreateForm] = useState(false);
+  const [contractCopied, setContractCopied] = useState(false);
+
+  const handleCopyContract = () => {
+    navigator.clipboard.writeText(CONTRACT_ADDRESS);
+    setContractCopied(true);
+    setTimeout(() => setContractCopied(false), 2000);
+  };
 
   // Read all listings directly from smart contract
   const {
@@ -150,16 +157,31 @@ export default function Home() {
                 />
                 <span>{isRefetching ? "Syncing..." : "Sync Blockchain"}</span>
               </button>
-              <a
-                href={`https://scan.botchain.ai/address/${CONTRACT_ADDRESS}`}
-                target="_blank"
-                rel="noreferrer"
-                className="px-4 py-2.5 rounded-xl bg-charcoal-850 hover:bg-charcoal-800 text-emerald-light border border-emerald-500/30 font-medium text-xs sm:text-sm transition-all duration-200 flex items-center gap-1.5"
-                title="View Smart Contract on BOT Chain Explorer"
-              >
-                <span>Verified Contract</span>
-                <span className="text-[10px] text-charcoal-400">↗</span>
-              </a>
+              <div className="flex items-center gap-2 bg-charcoal-850/90 border border-charcoal-700/80 px-3 py-2 rounded-xl text-xs">
+                <span className="text-charcoal-400 font-medium hidden sm:inline">Mainnet Contract:</span>
+                <a
+                  href={`https://scan.botchain.ai/address/${CONTRACT_ADDRESS}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-mono text-emerald-light hover:underline flex items-center gap-1 font-semibold"
+                  title="View Contract on BOT Chain Explorer"
+                >
+                  <span className="hidden md:inline">{CONTRACT_ADDRESS}</span>
+                  <span className="md:hidden">{CONTRACT_ADDRESS.slice(0, 6)}...{CONTRACT_ADDRESS.slice(-4)}</span>
+                  <ExternalLink className="w-3 h-3 opacity-70" />
+                </a>
+                <button
+                  onClick={handleCopyContract}
+                  className="p-1 rounded text-charcoal-400 hover:text-white transition-colors"
+                  title="Copy Mainnet Contract Address"
+                >
+                  {contractCopied ? (
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                  ) : (
+                    <Copy className="w-3.5 h-3.5" />
+                  )}
+                </button>
+              </div>
             </div>
           </div>
           {/* Subtle background glow */}
@@ -240,9 +262,11 @@ export default function Home() {
           {/* BOT Chain Ecosystem Banner */}
           <div className="rounded-2xl bg-charcoal-900/80 border border-charcoal-800 p-6 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3.5">
-              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-emerald-500/20 via-emerald-600/30 to-purple-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-sm tracking-wider shadow-glow-emerald">
-                BOT
-              </div>
+              <img
+                src="/botchain-logo.jpg"
+                alt="BOT Chain Logo"
+                className="w-11 h-11 rounded-xl object-contain border border-emerald-500/30 shadow-glow-emerald bg-black"
+              />
               <div>
                 <div className="flex items-center gap-2">
                   <h4 className="text-sm font-semibold text-white tracking-wide">
@@ -263,8 +287,14 @@ export default function Home() {
                 href="https://botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="px-4 py-2 rounded-xl bg-charcoal-850 hover:bg-charcoal-800 text-charcoal-200 hover:text-white border border-charcoal-700/70 hover:border-charcoal-600 font-medium transition-all flex items-center gap-1.5"
+                className="px-4 py-2.5 rounded-xl bg-charcoal-850 hover:bg-charcoal-800 text-charcoal-200 hover:text-white border border-charcoal-700/70 hover:border-charcoal-600 font-medium transition-all flex items-center gap-2"
+                title="Official BOT Chain Website"
               >
+                <img
+                  src="/botchain-logo.jpg"
+                  alt="BOT Chain"
+                  className="w-4 h-4 rounded object-contain shrink-0"
+                />
                 <span>BOT Chain Website</span>
                 <span className="text-[11px] text-charcoal-400">↗</span>
               </a>
@@ -272,8 +302,14 @@ export default function Home() {
                 href="https://scan.botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="px-4 py-2 rounded-xl bg-emerald-dim/40 hover:bg-emerald-dim/60 text-emerald-light border border-emerald-500/40 hover:border-emerald-500/60 font-medium transition-all flex items-center gap-1.5"
+                className="px-4 py-2.5 rounded-xl bg-emerald-dim/40 hover:bg-emerald-dim/60 text-emerald-light border border-emerald-500/40 hover:border-emerald-500/60 font-medium transition-all flex items-center gap-2"
+                title="Official BOT Chain Explorer"
               >
+                <img
+                  src="/botchain-logo.jpg"
+                  alt="BOT Chain"
+                  className="w-4 h-4 rounded object-contain shrink-0"
+                />
                 <span>BOT Chain Explorer</span>
                 <span className="text-[11px] text-emerald-400">↗</span>
               </a>
@@ -288,27 +324,37 @@ export default function Home() {
                 href={`https://scan.botchain.ai/address/${CONTRACT_ADDRESS}`}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-purple-300 transition-colors"
+                className="hover:text-purple-300 transition-colors font-mono"
               >
-                Verified Contract: {CONTRACT_ADDRESS.slice(0, 6)}...{CONTRACT_ADDRESS.slice(-4)}
+                Contract: {CONTRACT_ADDRESS}
               </a>
               <span>•</span>
               <a
                 href="https://scan.botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-purple-300 transition-colors"
+                className="hover:text-purple-300 transition-colors flex items-center gap-1"
               >
-                Explorer
+                <img
+                  src="/botchain-logo.jpg"
+                  alt="BOT Chain"
+                  className="w-3.5 h-3.5 rounded object-contain inline"
+                />
+                <span>Explorer</span>
               </a>
               <span>•</span>
               <a
                 href="https://botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-purple-300 transition-colors"
+                className="hover:text-purple-300 transition-colors flex items-center gap-1"
               >
-                botchain.ai
+                <img
+                  src="/botchain-logo.jpg"
+                  alt="BOT Chain"
+                  className="w-3.5 h-3.5 rounded object-contain inline"
+                />
+                <span>botchain.ai</span>
               </a>
             </div>
           </div>

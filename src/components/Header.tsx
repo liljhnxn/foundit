@@ -45,13 +45,33 @@ export function Header() {
                 Found<span className="text-purple-light">It</span>
               </span>
               <a
+                href="https://botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-charcoal-850 hover:bg-charcoal-800 text-charcoal-200 border border-charcoal-700 text-xs font-medium transition-all"
+                title="Visit BOT Chain Website"
+              >
+                <img
+                  src="/botchain-logo.jpg"
+                  alt="BOT Chain Logo"
+                  className="w-4 h-4 rounded object-contain"
+                />
+                <span>botchain.ai</span>
+                <ExternalLink className="w-2.5 h-2.5 opacity-60" />
+              </a>
+              <a
                 href="https://scan.botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="px-2 py-0.5 text-[11px] font-medium tracking-wide uppercase rounded-full bg-emerald-dim/40 text-emerald-light border border-emerald-500/30 hover:bg-emerald-dim/60 transition-colors flex items-center gap-1"
-                title="View BOT Chain Mainnet"
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-dim/40 hover:bg-emerald-dim/60 text-emerald-light border border-emerald-500/30 text-xs font-medium transition-all"
+                title="View BOT Chain Explorer"
               >
-                <span>BOT Chain</span>
+                <img
+                  src="/botchain-logo.jpg"
+                  alt="BOT Chain Logo"
+                  className="w-4 h-4 rounded object-contain"
+                />
+                <span>Explorer</span>
                 <ExternalLink className="w-2.5 h-2.5 opacity-70" />
               </a>
             </div>
